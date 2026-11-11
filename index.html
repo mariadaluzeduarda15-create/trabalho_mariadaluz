@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portal comunitário de Capanema PR">
+<title>Capanema Conecta</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<header>
+    <div class="container navbar">
+        <a href="#inicio" class="logo">🌿 Capanema Conecta</a>
+        <button id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        <nav id="navLinks">
+            <a href="#inicio">Início</a>
+            <a href="#eventos">Eventos</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#achados">Achados e Perdidos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+    <div class="container">
+        <h1>Nossa cidade, mais conectada!</h1>
+        <p>Informações, serviços e oportunidades para toda a comunidade de Capanema/PR.</p>
+        <a href="#servicos" class="btn">Conheça o portal</a>
+    </div>
+</section>
+
+<section class="section" id="eventos">
+    <div class="container">
+        <h2>📅 Eventos da Comunidade</h2>
+        <p>Confira os acontecimentos da nossa cidade.</p>
+        <div class="cards" id="eventList"></div>
+    </div>
+</section>
+
+<section class="section fundo" id="servicos">
+    <div class="container">
+        <h2>🏪 Guia de Serviços</h2>
+        <p>Encontre categorias de serviços da região.</p>
+        <input type="search" id="serviceSearch" placeholder="Pesquisar serviço...">
+        <div class="cards" id="serviceList"></div>
+        <p id="serviceEmpty" hidden>Nenhum serviço encontrado.</p>
+    </div>
+</section>
+
+<section class="section" id="achados">
+    <div class="container">
+        <h2>🔎 Achados e Perdidos</h2>
+        <p>Perdeu ou encontrou algo? Compartilhe com a comunidade!</p>
+        <form id="foundForm">
+            <label for="foundType">Tipo de anúncio</label>
+            <select id="foundType" required>
+                <option value="">Selecione</option>
+                <option>Perdido</option>
+                <option>Encontrado</option>
+            </select>
+            <label for="foundCategory">Categoria</label>
+            <select id="foundCategory" required>
+                <option value="">Selecione</option>
+                <option>Documento</option>
+                <option>Animal</option>
+                <option>Objeto</option>
+                <option>Outro</option>
+            </select>
+            <label for="foundDescription">Descrição</label>
+            <textarea id="foundDescription" maxlength="300" required></textarea>
+            <label for="foundLocation">Local aproximado</label>
+            <input type="text" id="foundLocation" maxlength="100" required>
+            <button class="btn" type="submit">Cadastrar anúncio</button>
+            <p id="foundFeedback" role="status"></p>
+        </form>
+        <h3>Últimos anúncios</h3>
+        <div class="cards" id="foundList"></div>
+        <p id="foundEmpty" hidden>Nenhum anúncio cadastrado.</p>
+    </div>
+</section>
+
+<section class="section fundo" id="contato">
+    <div class="container">
+        <h2>💬 Entre em contato</h2>
+        <p>Envie sugestões e ajude a melhorar nossa comunidade.</p>
+        <form id="contactForm">
+            <label for="contactName">Nome</label>
+            <input type="text" id="contactName" maxlength="80" required>
+            <label for="contactEmail">E-mail</label>
+            <input type="email" id="contactEmail" maxlength="120" required>
+            <label for="contactSubject">Assunto</label>
+            <select id="contactSubject" required>
+                <option value="">Selecione</option>
+                <option>Sugestão</option>
+                <option>Dúvida</option>
+                <option>Evento</option>
+                <option>Outro</option>
+            </select>
+            <label for="contactMessage">Mensagem</label>
+            <textarea id="contactMessage" maxlength="1000" required></textarea>
+            <button class="btn" type="submit">Enviar mensagem</button>
+            <p id="contactFeedback" role="status"></p>
+        </form>
+    </div>
+</section>
+</main>
+
+<footer>
+    <p>© <span id="currentYear"></span> Capanema Conecta | Projeto acadêmico</p>
+    <p>Capanema - Paraná</p>
+</footer>
+</body>
+</html>
